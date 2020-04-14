@@ -3,13 +3,14 @@
 // Import a Google Font
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-// Set your brand colors
-$purple: #8A4D76;
-$pink: #FA7C91;
-$brown: #757763;
-$beige-light: #D0D1CD;
-$beige-lighter: #EFF0EB;
 $white:#FFFFFF;
+$black:#000000;
+$blue-crayola: #1D71F2;
+$button-blue:#1C9CF6;
+$disco-ball:#19C3FB;
+$bubbles:#E3F4FE;
+$cornsilk:#FFFAE0;
+$tangerine-yellow:#FFCD00;
 
 // Update Bulma's global variables
 $family-sans-serif: 'Montserrat', sans-serif;
@@ -17,17 +18,18 @@ $widescreen-enabled: false;
 $fullhd-enabled: false;
 
 // Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
+$body-background-color:$cornsilk;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 $section-padding: 1rem;
 $table-background-color: $pink;
-$table-head-background-color: $beige-light;
-$table-body-background-color:$beige-lighter;
-$table-striped-row-even-background-color:$brown;
-$table-striped-row-even-hover-background-color: $purple;
-$table-row-hover-background-color:$purple;
+$table-head-background-color: lighten($blue-crayola,30%);
+$table-body-background-color:darken($bubbles, 10%);
+$table-striped-row-even-background-color:$bubbles;
+$table-striped-row-even-hover-background-color: lighten($blue-crayola,30%);
+$table-row-hover-background-color:lighten($blue-crayola,30%);
+$table-head-cell-color:$white;
 $table-cell-border:0;
 
 // Import only what you need from Bulma
@@ -44,7 +46,7 @@ hr.styled {
 }
 
 .bold {
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 .temp {
@@ -53,5 +55,9 @@ hr.styled {
 
 .desc {
     text-align: left;
+}
+
+.info {
+    font-size: 0.75rem;
 }
 
