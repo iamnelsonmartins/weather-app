@@ -11,29 +11,23 @@ const Weather = ({ weather }) => {
     return (
         <section className="section">
             <div className="container">
-                <div className='columns is-centered'>
-                    <div className='column is-half has-text-centered' >
-                        <p className='title'>
-                            <span>{weather.name}</span>
-                            <span className='bold'> {weather.sys.country}</span>
-                        </p>
-                        <div className='columns is-vcentered'>
-                            <div className='column'>
-                                <p className="title bold temp">{Math.ceil(weather.main.temp)}°</p>
-                                <p className="subtitle is-6">
-                                    <span className='bold'>{Math.ceil(weather.main.temp_max)}° </span>
-                                    <span>{Math.ceil(weather.main.temp_min)}°</span>
-                                </p>
+                <div className="columns has-text-centered is-centered">
+                    <div className="column is-half">
+                        <p className='title'>{weather.name} <strong>{weather.sys.country}</strong></p>
+                        <div className="columns">
+                            <div className="column">
+                                <span className='bigTemp bold'>{Math.round(weather.main.temp)}°</span>
                             </div>
-                            <div className='column desc'>
+                            <div className="column description">
+                                <p>max: {Math.round(weather.main.temp_max)}°</p>
+                                <p>min: {Math.round(weather.main.temp_min)}°</p>
                                 <p>{weather.weather[0].description}</p>
-                                <p>wind: {weather.wind.speed} m/s</p>
                                 <p>sunrise: {calculateDate(weather.sys.sunrise)}</p>
                                 <p>sunset: {calculateDate(weather.sys.sunset)}</p>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div >
             </div>
         </section >
     )

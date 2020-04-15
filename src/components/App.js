@@ -17,13 +17,12 @@ class App extends Component {
       weather: [],
       forecast: [],
       errorMessage: null,
+      search: true
     }
     this.search = this.search.bind(this)
   }
 
   search = searchValue => {
-    this.setState({ loading: true })
-    this.setState({ setErrorMessage: null })
 
     const weather = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&apikey=${process.env.REACT_APP_API_KEY}&units=metric`
     const forecast = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&apikey=${process.env.REACT_APP_API_KEY}&units=metric`
@@ -38,6 +37,8 @@ class App extends Component {
             weather: response[0].data,
             forecast: response[1].data.list,
             loading: false,
+            search: true,
+            errorMessage: null
           });
 
         })
@@ -50,24 +51,28 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header title='Whats the weather for today' />
+        <Header title="What's the weather like Today?" />
         <Search search={this.search} />
         <div>
           {this.state.loading && !this.state.errorMessage ? (
             <section className='section'>
               <div className='container has-text-centered'>
-                <p>Waiting for input</p>
+                <p>Type a city name to see the weather</p>
               </div>
             </section>
-          ) : this.state.errorMessage ? (
-            <div className="errorMessage">{this.state.errorMessage}</div>
+          ) : this.state.errorMessage && this.state.search ? (
+            <section className='section'>
+              <div className='container has-text-centered info'>
+                <p>something went wrong</p>
+                <p>did you forgot to type a city?</p>
+              </div>
+            </section>
           ) : (
                 <>
-                  < Weather weather={this.state.weather} />
+                  <Weather weather={this.state.weather} />
                   <Spacer />
                   <Forecast forecast={this.state.forecast} />
-                  <Spacer />
-                  <Footer text='FOOTER TEXT' />
+                  <Footer />
                 </>
               )}
         </div>

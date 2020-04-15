@@ -11,6 +11,10 @@ $disco-ball:#19C3FB;
 $bubbles:#E3F4FE;
 $cornsilk:#FFFAE0;
 $tangerine-yellow:#FFCD00;
+$licorice:#141414;
+
+$new-blue:#5393B2;
+$grey-blueish:#A6BDCA;
 
 // Update Bulma's global variables
 $family-sans-serif: 'Montserrat', sans-serif;
@@ -18,46 +22,65 @@ $widescreen-enabled: false;
 $fullhd-enabled: false;
 
 // Update some of Bulma's component variables
-$body-background-color:$cornsilk;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 $section-padding: 1rem;
-$table-background-color: $pink;
-$table-head-background-color: lighten($blue-crayola,30%);
-$table-body-background-color:darken($bubbles, 10%);
-$table-striped-row-even-background-color:$bubbles;
-$table-striped-row-even-hover-background-color: lighten($blue-crayola,30%);
-$table-row-hover-background-color:lighten($blue-crayola,30%);
-$table-head-cell-color:$white;
-$table-cell-border:0;
+$footer-background-color:$tangerine-yellow;
+$footer-color:$white;
+$footer-padding: 3rem 1.5rem;
 
 // Import only what you need from Bulma
 @import "~bulma/bulma.sass";
 
-hr.styled {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+body {
+    min-height: 100vh;
+    background: linear-gradient($grey-blueish, $new-blue);
+    color:$licorice;
 }
 
-.title {
-    font-weight: normal;
+hr.styled {
+    border: 0;
+    height: 0.5px;
+    background: #363636;
 }
 
 .bold {
     font-weight: bold !important;
 }
 
-.temp {
-    font-size: 4rem;
+.bigTemp {
+    font-size: 5rem;
 }
 
-.desc {
-    text-align: left;
+.currentDay {
+    padding: 10px;
+    background-color: rgba(255,255,255,1);
 }
 
 .info {
     font-size: 0.75rem;
 }
 
+.description p:nth-child(2n) {
+    color:lighten($licorice, 20%)
+}
+
+.weather {
+    background-color:blue;
+    display:block;
+}
+
+.weather-details {
+    background-color: rgba(255,255,255,0.50);
+}
+
+.weather-details-data {
+    display: inline-block;
+    padding:10px;
+}
+
+.spacer {
+    border-bottom: 1px solid black;
+    display:block;
+}

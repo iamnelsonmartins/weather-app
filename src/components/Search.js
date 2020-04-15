@@ -35,10 +35,18 @@ class Search extends Component {
                         <div className='column is-half'>
                             <div className="field has-addons">
                                 <div className="control is-expanded">
-                                    <input className="input" type="text" value={this.state.searchValue} onChange={this.handleSearchInputChanges} />
+                                    <input
+                                        className="input"
+                                        type="text"
+                                        value={this.state.searchValue}
+                                        onChange={this.handleSearchInputChanges} />
                                 </div>
                                 <div className="control">
-                                    <input className="button is-info" onClick={this.callSearchFunction} type="submit" value="SEARCH" />
+                                    <input
+                                        className="button is-info"
+                                        onClick={this.callSearchFunction}
+                                        type="submit"
+                                        value="SEARCH" />
                                 </div>
                             </div>
                         </div>

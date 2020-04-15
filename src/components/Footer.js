@@ -5,11 +5,11 @@ class Footer extends Component {
         return (
             <footer className="footer">
                 <div className="content has-text-centered">
-                    <p>
-                        {this.props.text}
+                    <p className='title is-6'>
+                        what's the weather - 2020 - made by <a href="https://iamnelsonmartins.com">iamnelsonmartins</a>
                     </p>
                 </div>
-            </footer>
+            </footer >
         );
     }
 };
