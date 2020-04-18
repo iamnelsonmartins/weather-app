@@ -8,9 +8,9 @@ class Header extends Component {
                     <section className="hero is-small">
                         <div className="hero-body has-text-centered">
                             <div className="container">
-                                <h1 className="title">
+                                <p className="title">
                                     {this.props.title}
-                                </h1>
+                                </p>
                             </div>
                         </div>
                     </section>

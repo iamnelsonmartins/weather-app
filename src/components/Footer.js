@@ -5,7 +5,7 @@ class Footer extends Component {
         return (
             <footer className="footer">
                 <div className="content has-text-centered">
-                    <p className='title is-6'>
+                    <p className='title is-7'>
                         what's the weather - 2020 - made by <a href="https://iamnelsonmartins.com">iamnelsonmartins</a>
                     </p>
                 </div>

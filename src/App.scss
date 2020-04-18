@@ -4,17 +4,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 $white:#FFFFFF;
-$black:#000000;
-$blue-crayola: #1D71F2;
-$button-blue:#1C9CF6;
-$disco-ball:#19C3FB;
-$bubbles:#E3F4FE;
-$cornsilk:#FFFAE0;
+$honeydew:#F1FFE7;
 $tangerine-yellow:#FFCD00;
 $licorice:#141414;
+$whiteish: #F0F0F5;
 
 $new-blue:#5393B2;
 $grey-blueish:#A6BDCA;
+$wengue:#75574D;
 
 // Update Bulma's global variables
 $family-sans-serif: 'Montserrat', sans-serif;
@@ -26,16 +23,15 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 $section-padding: 1rem;
-$footer-background-color:$tangerine-yellow;
-$footer-color:$white;
-$footer-padding: 3rem 1.5rem;
+$footer-padding: 1rem 1.5rem;
 
 // Import only what you need from Bulma
 @import "~bulma/bulma.sass";
 
 body {
     min-height: 100vh;
-    background: linear-gradient($grey-blueish, $new-blue);
+    background-color: #E6E8E6;
+    // background-color: darken(#E6E8E6, 80%);
     color:$licorice;
 }
 
@@ -43,6 +39,10 @@ hr.styled {
     border: 0;
     height: 0.5px;
     background: #363636;
+}
+.city {
+    color:$licorice;
+    font-size: 2rem;
 }
 
 .bold {
@@ -56,23 +56,24 @@ hr.styled {
 .currentDay {
     padding: 10px;
     background-color: rgba(255,255,255,1);
+    color:$licorice;
 }
 
 .info {
     font-size: 0.75rem;
 }
 
-.description p:nth-child(2n) {
-    color:lighten($licorice, 20%)
+.description{
+    color:$licorice;
 }
 
 .weather {
-    background-color:blue;
     display:block;
 }
 
 .weather-details {
     background-color: rgba(255,255,255,0.50);
+    color:$licorice;
 }
 
 .weather-details-data {
@@ -80,7 +81,29 @@ hr.styled {
     padding:10px;
 }
 
-.spacer {
-    border-bottom: 1px solid black;
-    display:block;
+.footer {
+    border-top:5px solid #3FA34D;
+    background-color: $wengue;
+    
+    p {
+        color:$white;
+        font-weight: normal;
+
+        a {
+            color:$white;
+
+            &:hover {
+                font-weight:bold;
+            }
+        }
+    }
+}
+
+//weather status classes
+.weather-night {
+    background-color: darken(#E6E8E6, 80%);
+
+    .title, .city, .bigTemp, .description, .info {
+        color: $white;
+    }
 }

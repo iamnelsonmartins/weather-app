@@ -3,7 +3,6 @@ import Header from './Header'
 import Search from './Search'
 import Weather from './Weather'
 import Forecast from './Forecast'
-import Spacer from './Spacer'
 import Footer from './Footer'
 import axios from 'axios';
 import '../App.scss';
@@ -20,10 +19,28 @@ class App extends Component {
       search: true
     }
     this.search = this.search.bind(this)
+    this.removeBodyClass = this.removeBodyClass.bind(this)
+    this.changeBG = this.changeBG.bind(this)
+  }
+
+  removeBodyClass = () => {
+    const bodyCurrentClass = document.body.className
+    document.body.classList.remove(bodyCurrentClass)
+    document.body.classList.add('weather-default')
+  }
+
+  changeBG = () => {
+    const date = new Date();
+    let time = date.toLocaleString([], { hour: '2-digit', minute: '2-digit' })
+
+    if (time >= '05:00' && time <= '21:00') {
+      document.body.classList.remove('weather-night');
+    } else {
+      document.body.classList.add('weather-night');
+    }
   }
 
   search = searchValue => {
-
     const weather = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&apikey=${process.env.REACT_APP_API_KEY}&units=metric`
     const forecast = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&apikey=${process.env.REACT_APP_API_KEY}&units=metric`
 
@@ -51,12 +68,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {this.changeBG()}
         <Header title="What's the weather like Today?" />
         <Search search={this.search} />
         <div>
           {this.state.loading && !this.state.errorMessage ? (
             <section className='section'>
-              <div className='container has-text-centered'>
+              <div className='container has-text-centered info'>
                 <p>Type a city name to see the weather</p>
               </div>
             </section>
@@ -70,7 +88,6 @@ class App extends Component {
           ) : (
                 <>
                   <Weather weather={this.state.weather} />
-                  <Spacer />
                   <Forecast forecast={this.state.forecast} />
                   <Footer />
                 </>
