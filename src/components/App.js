@@ -43,6 +43,7 @@ class App extends Component {
   search = searchValue => {
     const weather = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&apikey=${process.env.REACT_APP_API_KEY}&units=metric`
     const forecast = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&apikey=${process.env.REACT_APP_API_KEY}&units=metric`
+    const message = document.querySelector('.info p')
 
     const requestWeather = axios.get(weather)
     const requestForecast = axios.get(forecast)
@@ -57,7 +58,7 @@ class App extends Component {
             search: true,
             errorMessage: null
           });
-
+          message.textContent = 'Looking outside for you... one sec'
         })
       )
       .catch(error => {
