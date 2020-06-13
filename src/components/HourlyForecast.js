@@ -11,9 +11,9 @@ const HourlyForecast = ({ data }) => {
                     <div className='weather-details-data'>
                         {`${getHour(data.dt * 1000 - 1000)}:00`}
                     </div>
+                    <div className='weather-details-data'>-</div>
                     <div className='weather-details-data'>
-                        <strong>{`${Math.round(data.main.temp_max)}°`} </strong>
-                        {`${Math.round(data.main.temp_min)}°`}
+                        <strong>{`${Math.round(data.main.temp_max)}°`} </strong>{`${Math.round(data.main.temp_min)}°`}
                     </div>
                     <span className='spacer' />
                 </div>

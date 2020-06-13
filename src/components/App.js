@@ -19,26 +19,8 @@ class App extends Component {
       search: true
     }
     this.search = this.search.bind(this)
-    this.removeBodyClass = this.removeBodyClass.bind(this)
-    this.changeBG = this.changeBG.bind(this)
   }
 
-  removeBodyClass = () => {
-    const bodyCurrentClass = document.body.className
-    document.body.classList.remove(bodyCurrentClass)
-    document.body.classList.add('weather-default')
-  }
-
-  changeBG = () => {
-    const date = new Date();
-    let time = date.toLocaleString([], { hour: '2-digit', minute: '2-digit' })
-
-    if (time >= '05:00' && time <= '21:00') {
-      document.body.classList.remove('weather-night');
-    } else {
-      document.body.classList.add('weather-night');
-    }
-  }
 
   search = searchValue => {
     const weather = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&apikey=${process.env.REACT_APP_API_KEY}&units=metric`
@@ -69,7 +51,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.changeBG()}
         <Header title="What's the weather like Today?" />
         <Search search={this.search} />
         <div>

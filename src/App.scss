@@ -4,13 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 $white:#FFFFFF;
-$honeydew:#F1FFE7;
-$tangerine-yellow:#FFCD00;
 $licorice:#141414;
-$whiteish: #F0F0F5;
-
-$new-blue:#5393B2;
-$grey-blueish:#A6BDCA;
 $wengue:#75574D;
 
 // Update Bulma's global variables
@@ -33,6 +27,12 @@ body {
     min-height: 100vh;
     background-color: #E6E8E6;
     color:$licorice;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .root {
@@ -79,7 +79,9 @@ hr.styled {
 .weather-details {
     background-color: rgba(255,255,255,0.50);
     color:$licorice;
+    border-bottom: 1px solid $licorice;
 }
+
 
 .weather-details-data {
     display: inline-block;
@@ -104,14 +106,5 @@ hr.styled {
                 font-weight:bold;
             }
         }
-    }
-}
-
-//weather status classes
-.weather-night {
-    background-color: darken(#E6E8E6, 80%);
-
-    .title, .city, .bigTemp, .description, .info {
-        color: $white;
     }
 }
