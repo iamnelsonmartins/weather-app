@@ -3,13 +3,13 @@
 // Import a Google Font
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-$white:#FFFFFF;
-$licorice:#141414;
-$wengue:#75574D;
+$white: #ffffff;
+$licorice: #141414;
+$wengue: #75574d;
 
 // Update Bulma's global variables
 $family-sans-serif: 'Montserrat', sans-serif;
-$body-background-color: #E6E8E6;
+$body-background-color: #e6e8e6;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
@@ -21,90 +21,87 @@ $section-padding: 1rem;
 $footer-padding: 1rem 1.5rem;
 
 // Import only what you need from Bulma
-@import "~bulma/bulma.sass";
+@import '~bulma/bulma.sass';
 
 body {
-    min-height: 100vh;
-    background-color: #E6E8E6;
-    color:$licorice;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background-color: #e6e8e6;
+  color: $licorice;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .root {
-    background-color:#E6E8E6
+  background-color: #e6e8e6;
 }
-
 
 hr.styled {
-    border: 0;
-    height: 0.5px;
-    background: #363636;
+  border: 0;
+  height: 0.5px;
+  background: #363636;
 }
 .city {
-    color:$licorice;
-    font-size: 2rem;
+  color: $licorice;
+  font-size: 2rem;
 }
 
 .bold {
-    font-weight: bold !important;
+  font-weight: bold !important;
 }
 
 .bigTemp {
-    font-size: 5rem;
+  font-size: 5rem;
 }
 
 .currentDay {
-    padding: 10px;
-    background-color: rgba(255,255,255,1);
-    color:$licorice;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 1);
+  color: $licorice;
 }
 
 .info {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
-.description{
-    color:$licorice;
+.description {
+  color: $licorice;
 }
 
 .weather {
-    display:block;
+  display: block;
 }
 
 .weather-details {
-    background-color: rgba(255,255,255,0.50);
-    color:$licorice;
-    border-bottom: 1px solid $licorice;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: $licorice;
+  border-bottom: 1px solid $licorice;
 }
 
-
 .weather-details-data {
-    display: inline-block;
-    padding:10px;
+  display: inline-block;
+  padding: 10px;
 }
 
 .footer {
-    position: absolute;
-    bottom:-200px;
-    width: 100%;
-    border-top:5px solid #3FA34D;
-    background-color: $wengue;
-    
-    p {
-        color:$white;
-        font-weight: normal;
+  position: absolute;
+  width: 100%;
+  border-top: 5px solid #3fa34d;
+  background-color: $wengue;
 
-        a {
-            color:$white;
+  p {
+    color: $white;
+    font-weight: normal;
 
-            &:hover {
-                font-weight:bold;
-            }
-        }
+    a {
+      color: $white;
+
+      &:hover {
+        font-weight: bold;
+      }
     }
+  }
 }

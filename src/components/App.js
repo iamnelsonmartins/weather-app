@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Header from './Header'
 import Search from './Search'
 import Weather from './Weather'
 import Forecast from './Forecast'
 import Footer from './Footer'
-import axios from 'axios';
-import '../App.scss';
+import axios from 'axios'
+import '../App.scss'
 require('dotenv').config()
 
 class App extends Component {
@@ -16,13 +16,12 @@ class App extends Component {
       weather: [],
       forecast: [],
       errorMessage: null,
-      search: true
+      search: true,
     }
     this.search = this.search.bind(this)
   }
 
-
-  search = searchValue => {
+  search = (searchValue) => {
     const weather = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&apikey=${process.env.REACT_APP_API_KEY}&units=metric`
     const forecast = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&apikey=${process.env.REACT_APP_API_KEY}&units=metric`
     const message = document.querySelector('.info p')
@@ -30,7 +29,8 @@ class App extends Component {
     const requestWeather = axios.get(weather)
     const requestForecast = axios.get(forecast)
 
-    axios.all([requestWeather, requestForecast])
+    axios
+      .all([requestWeather, requestForecast])
       .then(
         axios.spread((...response) => {
           this.setState({
@@ -38,19 +38,19 @@ class App extends Component {
             forecast: response[1].data.list,
             loading: false,
             search: true,
-            errorMessage: null
-          });
+            errorMessage: null,
+          })
           message.textContent = 'Looking outside for you... one sec'
         })
       )
-      .catch(error => {
+      .catch((error) => {
         this.setState({ errorMessage: error })
-      });
+      })
   }
 
   render() {
     return (
-      <div className="App">
+      <div className='App'>
         <Header title="What's the weather like Today?" />
         <Search search={this.search} />
         <div>
@@ -68,16 +68,16 @@ class App extends Component {
               </div>
             </section>
           ) : (
-                <>
-                  <Weather weather={this.state.weather} />
-                  <Forecast forecast={this.state.forecast} />
-                  <Footer />
-                </>
-              )}
+            <>
+              <Weather weather={this.state.weather} />
+              <Forecast forecast={this.state.forecast} />
+              <Footer />
+            </>
+          )}
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
