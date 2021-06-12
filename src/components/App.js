@@ -51,7 +51,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Header title="What's the weather like Today?" />
+        <Header title="What's the weather like today?" />
         <Search search={this.search} />
         <div>
           {this.state.loading && !this.state.errorMessage ? (
